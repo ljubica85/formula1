@@ -31,7 +31,7 @@ class DetaljiVozaca extends React.Component {
     }
     getDriver() {
         godina = this.props.match.params.year;
-        var url = `http://ergast.com/api/f1/${godina}/drivers/${this.props.match.params.id}/results.json`;
+        var url = `https://ergast.com/api/f1/${godina}/drivers/${this.props.match.params.id}/results.json`;
         console.log(url)
         $.get(url, (data) => {
             this.setState({ driver: data.MRData.RaceTable.Races, isLoading: false });

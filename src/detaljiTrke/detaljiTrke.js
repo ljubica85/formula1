@@ -34,8 +34,8 @@ class DetaljiTrke extends React.Component {
     getAllData () {
         godina = this.props.match.params.year;
         id = this.props.match.params.id;
-        var firstCall = $.ajax(`http://ergast.com/api/f1/${godina}/${this.props.match.params.id}/qualifying.json`);
-        var secondCall = $.ajax(`http://ergast.com/api/f1/${godina}/${this.props.match.params.id}/results.json`);
+        var firstCall = $.ajax(`https://ergast.com/api/f1/${godina}/${this.props.match.params.id}/qualifying.json`);
+        var secondCall = $.ajax(`https://ergast.com/api/f1/${godina}/${this.props.match.params.id}/results.json`);
         var thirdCall = $.ajax("https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json");
         $.when(firstCall, secondCall, thirdCall).done(function (data1, data2, data3){
             var ispis = JSON.parse(data3[0]);

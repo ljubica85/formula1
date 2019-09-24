@@ -31,7 +31,7 @@ class Timovi extends React.Component {
     }    
     getAllData () {
         godina = this.props.match.params.year;
-        var firstCall = $.ajax(`http://ergast.com/api/f1/${godina}/constructorStandings.json`);
+        var firstCall = $.ajax(`https://ergast.com/api/f1/${godina}/constructorStandings.json`);
         var secondCall = $.ajax("https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json");
         $.when(firstCall, secondCall).done(function (data1, data2){
             var ispis = JSON.parse(data2[0]);
