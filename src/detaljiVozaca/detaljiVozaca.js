@@ -74,6 +74,10 @@ class DetaljiVozaca extends React.Component {
         let linkTo = "/vozaci/" + godina;
         history.push(linkTo);
     }
+    onClickDetailsOfRequest2 = (e) => {
+        let linkTo = "/detaljiTrke/" + e.target.dataset.itemid + "/" + godina;;
+        history.push(linkTo);
+    }
     render() {
         if (this.state.isLoading) {
             return <img src={loder} className='loderIkonica' />
@@ -156,7 +160,6 @@ class DetaljiVozaca extends React.Component {
                                 {this.state.driver.map((raceStats, i) => {
                                     let info = raceStats;
                                     let position = "_" + info.Results[0].position;
-                                    let nac = info.Results[0].Constructor.nationality;
                                     return (
                                         <tr key={i}>
                                             <td>{info.round}</td>
@@ -188,7 +191,7 @@ class DetaljiVozaca extends React.Component {
                                                     }
                                                 }
                                                 )}
-                                                {info.raceName}</td>
+                                                <button className='tabelaDugme' onClick={this.onClickDetailsOfRequest2} data-itemid={info.round}>{info.raceName}</button></td>
                                             <td>{info.Results[0].Constructor.name}</td>
                                             <td>{info.Results[0].grid}</td>
                                             <td className={position}>

@@ -119,9 +119,11 @@ ul{
         text-align: center;
     }
     .navigacija h3{
-        margin:auto;
+        margin:0 auto 0 auto;
+        font-size: 0.8em;
     }
     .slika_logoa{
         width:50px;
     }
+ 
 }

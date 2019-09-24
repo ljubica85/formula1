@@ -47,7 +47,12 @@ class DetaljiTrke extends React.Component {
                     isLoading:false
                 }); 
             } else {
-                this.getNotFound();
+                this.setState({
+                    result:data2[0].MRData.RaceTable.Races,
+                    flags: ispis,
+                    isLoading:false
+                }); 
+                // this.getNotFound();
             } 
             // this.setState({
             //     qualifications:data1[0].MRData.RaceTable.Races[0].QualifyingResults,

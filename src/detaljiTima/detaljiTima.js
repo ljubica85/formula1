@@ -61,6 +61,10 @@ class DetaljiTima extends React.Component {
         let linkTo = "/teams/" + godina;
         history.push(linkTo);
     }
+    onClickDetailsOfRequest2 = (e) => {
+        let linkTo = "/detaljiTrke/" + e.target.dataset.itemid + "/" + godina;;
+        history.push(linkTo);
+    }
     render() {
         if (this.state.isLoading) {
             return <img src={loder} className='loderIkonica' />
@@ -173,7 +177,7 @@ class DetaljiTima extends React.Component {
 
                                                 }
                                                 )}
-                                                {info.raceName}</td>
+                                                <button className='tabelaDugme' onClick={this.onClickDetailsOfRequest2} data-itemid={info.round}>{info.raceName}</button></td>
                                             <td className={"_" + position}>{position}</td>
                                             <td className={"_" + position1}>{position1}</td>
                                             <td>
