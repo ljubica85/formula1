@@ -125,5 +125,12 @@ ul{
     .slika_logoa{
         width:50px;
     }
- 
+}
+@media screen and (max-width:350px) {
+    .slika_logoa{
+        width:40px;
+    }
+    span.navigacija{
+        width: 80px;
+    }
 }
