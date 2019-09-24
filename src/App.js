@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import Sidebar from '././sidebar/sidebar.js';
 
 
