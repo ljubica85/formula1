@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#main{
+    width:100%;
+    display: flex;
+    border:3px solid black;
+}
+
+#slika{
+    border:3px solid black;
+    width:30%;
+    margin-right: 5%;
+}
+
+
+#container{
+    border:3px solid black;
+    width:64%;
+}
+#nav{
+    border:3px solid black;
+}
+#content{
+    border:3px solid black;
+}

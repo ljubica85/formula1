@@ -1,0 +1,93 @@
+/* tabela */
+.tabelaDugme{
+    background-color: transparent;
+    color: #30323b;
+    border: none;
+}
+.tabelaDugme:hover{
+    transform: scale(1.1);
+}
+tbody{
+    background-color: white;
+}
+.tabela{
+    width:90%;
+    margin:auto;
+    border-radius: 1%;
+    overflow:hidden;
+    border-collapse: collapse; 
+    color: #30323b; 
+    border: 1px solid #30323b;
+    -webkit-box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7);
+    -moz-box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7);
+    box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7); 
+}
+th{
+    text-align: left;
+    padding: 1%; 
+}
+th, tfoot tr {
+    background-image: linear-gradient(rgb(211, 217, 221), rgb(224, 217, 217))
+}
+tfoot td{
+    padding: 1%;
+}
+tr, td, th, thead{
+    border: 1px solid #30323b;
+    color: #30323b;
+}
+.celija{
+    display: flax;
+    border: none;
+}
+td a{
+    color:#30323b;
+}
+td a:visited{
+    color:#30323b;
+}
+.detalji{
+    border:none;
+    display: flex;
+}
+.tabela2{
+    width: 48%;
+    border-collapse: collapse;
+    margin:1%;
+    border-radius: 1%;
+    border: 1px solid #30323b;
+}
+.tabelaDetalji{
+    width:90%;
+    margin:auto;
+    border-radius: 1%;
+    overflow:hidden;
+    border-collapse: collapse; 
+    color: #30323b; 
+    border: 1px solid #30323b;
+    -webkit-box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7);
+    -moz-box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7);
+    box-shadow: 4px 4px 26px -4px rgba(48,50,59,0.7); 
+}
+table tr:nth-child(even){
+    background-color: rgb(211, 211, 214);
+}
+table tr:nth-child(odd){
+    background-color: white;
+}
+.tabelica{
+    color:white;
+    border:none;
+    background-color:#30323b;
+}
+@media screen and (max-width:980px) {
+    .detalji{
+        display: block;
+    }
+    .tabela2{
+        width:100%;
+    }
+    table{
+        font-size: 0.8em;
+    }
+ }

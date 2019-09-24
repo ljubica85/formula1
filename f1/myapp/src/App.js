@@ -1,12 +1,12 @@
 import React from 'react';
-import $ from 'jquery';
-import Sidebar from '././sidebar/sidebar.js';
+import Sidebar from '././komponente/sidebar.js';
+import Header from '././komponente/header.js';
 
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />  
+      <Sidebar />
     </div>
   );
 }
