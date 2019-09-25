@@ -29,8 +29,7 @@ class Sidebar extends React.Component {
     getYear(godina){
         this.setState({year: godina});
     }
-    render() {  
-        console.log(this.state.year);      
+    render() {       
         return (
             <Router history={history}>
                 <div className='sidebar'>

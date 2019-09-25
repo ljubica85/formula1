@@ -42,8 +42,6 @@ class DetaljiTima extends React.Component {
         var thirdCall = $.ajax("https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json");
         $.when(firstCall, secondCall, thirdCall).done(function (data1, data2, data3) {
             var ispis = JSON.parse(data3[0]);
-            console.log(secondCall);
-
             this.setState({
                 constructor: data1[0].MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0],
                 team: data2[0].MRData.RaceTable.Races,
@@ -51,7 +49,6 @@ class DetaljiTima extends React.Component {
                 isLoading: false
             });
         }.bind(this));
-        console.log(firstCall);
     }
 
     onClickDetailsOfRequest = (e) => {
@@ -141,8 +138,7 @@ class DetaljiTima extends React.Component {
                                     var filterResult2 = (info.Results && info.Results.filter(result => result.Driver.familyName === driver2)) || "";
                                     var position = filterResult1.length ? filterResult1[0].position : "no-data";
                                     var position1 = filterResult2.length ? filterResult2[0].position : "no-data";
-                                    var points = (filterResult1.length&&filterResult2.length)?+filterResult1[0].points + +filterResult2[0].points:"";
-                                    console.log(points);
+                                    var points = (filterResult1.length && filterResult2.length) ? +filterResult1[0].points + +filterResult2[0].points : "";
                                     // if (info.Results[0] !== undefined && info.Results[1] !== undefined) {
                                     //     points = +filterResult1.points + +filterResult2.points;
                                     // }

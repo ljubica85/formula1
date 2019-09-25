@@ -7,9 +7,6 @@
 .tabelaDugme:hover{
     transform: scale(1.1);
 }
-tbody{
-    /* background-color: white; */
-}
 .tabela{
     width:90%;
     margin:auto;
