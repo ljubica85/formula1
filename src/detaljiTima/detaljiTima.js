@@ -128,7 +128,7 @@ class DetaljiTima extends React.Component {
                     <div className='tabela detalji'>
                         <table className='tabelaDetalji'>
                             <thead>
-                                <tr><th colSpan='5'>Formula 1 2013 Results</th></tr>
+                                <tr><th colSpan='5'>Formula 1 {godina} Results</th></tr>
                                 <tr><th>Round</th><th>Grand Prix</th><th>{driver1}</th><th>{driver2 ? driver2 : "No data"}</th><th>Points</th></tr>
                             </thead>
                             <tbody>

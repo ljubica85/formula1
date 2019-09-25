@@ -32,7 +32,6 @@ class DetaljiVozaca extends React.Component {
     getDriver() {
         godina = this.props.match.params.year;
         var url = `https://ergast.com/api/f1/${godina}/drivers/${this.props.match.params.id}/results.json`;
-        console.log(url)
         $.get(url, (data) => {
             this.setState({ driver: data.MRData.RaceTable.Races, isLoading: false });
         })
@@ -46,7 +45,6 @@ class DetaljiVozaca extends React.Component {
         })
     }
     getImg() {
-        console.log(urlVozaca);
         var slika = urlVozaca;
         let crtica = slika.lastIndexOf("/") + 1;
         var avatar = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
@@ -57,7 +55,6 @@ class DetaljiVozaca extends React.Component {
             ime = slika.slice(crtica);
         }
         var link = `https://en.wikipedia.org/w/api.php?action=query&titles=${ime}&prop=pageimages&format=json&origin=*&pithumbsize=150`;
-        console.log(link);
         $.get(link, (data) => {
             if (Object.values(data.query.pages)[0].thumbnail !== undefined) {
                 this.setState({ wikilink: Object.values(data.query.pages)[0].thumbnail.source, isLoadingImage: false });
