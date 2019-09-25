@@ -22,11 +22,10 @@ class Pocetna extends React.Component {
         let min = 1950;
         let max = n;
         let allYears = [];
-        for (let x = min; x <= max; x++) {
+        for (let x = max; x >= min; x--) {
             allYears.push(x)
         }
         const yearList = allYears.map((x) => { return (<option value={x} key={x}>{x}</option>) });
-        console.log(godina);
         return (
             <div className="pocetnaStrana">
                 <div className='slika'></div>

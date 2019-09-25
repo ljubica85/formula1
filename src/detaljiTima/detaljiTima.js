@@ -12,6 +12,8 @@ import history from '../history.js';
 
 var godina = "2018";
 var id = '';
+var driver1 = "";
+var driver2 = "";
 
 
 class DetaljiTima extends React.Component {
@@ -48,7 +50,6 @@ class DetaljiTima extends React.Component {
                 flags: ispis,
                 isLoading: false
             });
-
         }.bind(this));
         console.log(firstCall);
     }
@@ -69,7 +70,8 @@ class DetaljiTima extends React.Component {
         if (this.state.isLoading) {
             return <img src={loder} className='loderIkonica' />
         }
-
+        driver1 = this.state.team[0].Results[0].Driver.familyName;
+        driver2 = this.state.team[0].Results[1] !== undefined ? this.state.team[0].Results[1].Driver.familyName : "";
         return (
             <div className='main'>
                 <div className="header1">
@@ -123,7 +125,6 @@ class DetaljiTima extends React.Component {
                                 <p className="biografija">
                                     <a href={this.state.team[0].Results[0].Constructor.url} target="_blank"><FaExternalLinkAlt /></a>
                                 </p>
-
                             </div>
                         </div>
                     </div>
@@ -131,19 +132,20 @@ class DetaljiTima extends React.Component {
                         <table className='tabelaDetalji'>
                             <thead>
                                 <tr><th colSpan='5'>Formula 1 2013 Results</th></tr>
-                                <tr><th>Round</th><th>Grand Prix</th><th>{this.state.team[0].Results[0] !== undefined ? this.state.team[0].Results[0].Driver.familyName : "No data"}</th><th>{this.state.team[0].Results[1] !== undefined ? this.state.team[0].Results[1].Driver.familyName : "No data"}</th><th>Points</th></tr>
+                                <tr><th>Round</th><th>Grand Prix</th><th>{driver1}</th><th>{driver2 ? driver2 : "No data"}</th><th>Points</th></tr>
                             </thead>
                             <tbody>
-                                {this.state.team.map((teamStats, i) => {
-                                    let info = teamStats;
-                                    var position = "";
-                                    var position1 = "";
-                                    var points = "";
-                                    if (info.Results[0] !== undefined && info.Results[1] !== undefined) {
-                                        position = info.Results[0].position;
-                                        position1 = info.Results[1].position;
-                                        points = +info.Results[0].points + +info.Results[1].points;
-                                    }
+                                {this.state.team.map((info, i) => {
+                                    // let info = teamStats;
+                                    var filterResult1 = (info.Results && info.Results.filter(result => result.Driver.familyName === driver1)) || "";
+                                    var filterResult2 = (info.Results && info.Results.filter(result => result.Driver.familyName === driver2)) || "";
+                                    var position = filterResult1.length ? filterResult1[0].position : "no-data";
+                                    var position1 = filterResult2.length ? filterResult2[0].position : "no-data";
+                                    var points = (filterResult1.length&&filterResult2.length)?+filterResult1[0].points + +filterResult2[0].points:"";
+                                    console.log(points);
+                                    // if (info.Results[0] !== undefined && info.Results[1] !== undefined) {
+                                    //     points = +filterResult1.points + +filterResult2.points;
+                                    // }
                                     return (
                                         <tr key={i}>
                                             <td>{info.round}</td>
