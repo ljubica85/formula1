@@ -131,7 +131,6 @@ class DetaljiTima extends React.Component {
                         <table className='tabelaDetalji'>
                             <thead>
                                 <tr><th colSpan='5'>Formula 1 2013 Results</th></tr>
-
                                 <tr><th>Round</th><th>Grand Prix</th><th>{this.state.team[0].Results[0] !== undefined ? this.state.team[0].Results[0].Driver.familyName : "No data"}</th><th>{this.state.team[0].Results[1] !== undefined ? this.state.team[0].Results[1].Driver.familyName : "No data"}</th><th>Points</th></tr>
                             </thead>
                             <tbody>

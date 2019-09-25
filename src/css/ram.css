@@ -24,7 +24,7 @@ h2{
     height:100%;
 }
 .Ovozacu{
-    width: 30%;
+    width: 23%;
     display: flex;
     background-color: #5d6475;
     height:100%;
@@ -76,9 +76,6 @@ a:visited{
 h4{
     padding: 0;
     margin:0;
-}
-.detaljiTim{
-    display: block;
 }
 .tim{
     width:100%;

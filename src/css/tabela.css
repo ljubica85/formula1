@@ -8,7 +8,7 @@
     transform: scale(1.1);
 }
 tbody{
-    background-color: white;
+    /* background-color: white; */
 }
 .tabela{
     width:90%;
@@ -89,5 +89,11 @@ table tr:nth-child(odd){
     }
     table{
         font-size: 0.8em;
+    }
+    table tr:nth-child(even){
+        background-color: rgba(211, 211, 214, 0.8);
+    }
+    table tr:nth-child(odd){
+        background-color: rgba(255, 255, 255, 0.8);
     }
  }
